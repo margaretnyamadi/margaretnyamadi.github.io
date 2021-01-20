@@ -44,8 +44,8 @@
 						<header>
 							<div class="inner">
 								<h2>SQL Queries using MySQL Workbench</h2>
-								<p>Below are some queries I have written using MySQL over the course of my Database Management
-									class. </p>
+								<!--<p>Below are some queries I have written using MySQL over the course of my Database Management
+									class. </p>-->
 
 								
 							</div>
@@ -56,25 +56,25 @@
 								<div class="inner">
 
 									<section>
-										<!--<h3 class="major">Overview</h3>-->
-										<!--<p>Throughout my Database Management course, I performed several queries as part of 
+										<h3 class="major">Overview</h3>
+										<p>Throughout my Database Management course, I performed several queries as part of 
 											assignments and have included some of them below to demonstrate my knowledge and 
-											understanding of SQL databases. </p>-->
+											understanding of SQL databases. </p>
 											
 											<div class="box alt">
 											<div class="row gtr-uniform">
 												<!--1st block of code-->
-												<div class="col-6.5"><pre><code> select first_name, last_name, emp_no, count(dept_no) as totalDeptNum
+												<div class="col-6"><pre><code> select first_name, last_name, emp_no, count(dept_no) as totalDeptNum
  from (employees natural join dept_emp) join departments using (dept_no)
  group by first_name, last_name, emp_no
  having TotalDeptNum > 2;
 												</code></pre></div>
 												<!--1st query caption-->
-												<div class="col-6.5"><p>This query shows the first and last name of employees who have been 
+												<div class="col-5"><p>This query shows the first and last name of employees who have been 
 													employed in more than 2 departments at any time during their employment.</p></div> 
 
 												<!--2nd block of code-->
-												<div class="col-6.5"><pre><code>with max_Emp(deptName,employeeCount) as (select dept_name, count(emp_no) as totalEmp
+												<div class="col-6"><pre><code>with max_Emp(deptName,employeeCount) as (select dept_name, count(emp_no) as totalEmp
 from employees natural join dept_emp natural join departments 
 where from_date &lt; curdate() and to_date &gt; curdate()
 group by dept_name)
@@ -82,11 +82,11 @@ select max(employeeCount)
 from max_Emp, departments;
 												</code></pre> </div>
 												<!--2nd query caption-->
-												<div class="col-6.5"><p>This query counts the number of employees in each department and show 
+												<div class="col-5"><p>This query counts the number of employees in each department and show 
 													the department(s) with the most employees currently.</p></div>
 
 												<!--3rd block of code-->
-												<div class="col-6.5"><pre><code> with recursive ReportsTo6(EmployeeId, ReportsTo) as 
+												<div class="col-6"><pre><code> with recursive ReportsTo6(EmployeeId, ReportsTo) as 
 (select EmployeeId, ReportsTo 
 from Employee
 union
@@ -98,19 +98,19 @@ from ReportsTo6
 where ReportsTo6.ReportsTo = 6;
 												</code></pre></div>
 												<!--3rd query caption-->
-												<div class="col-6.5"><p>This query describes a table with one column containing employee IDs and 
+												<div class="col-5"><p>This query describes a table with one column containing employee IDs and 
 													a second column containing the ID of employees the person reports to, either directly or 
 													indirectly.  From that result, the outer query selects all the IDs of the people who report to 
 													employee with ID 6, either directly or indirectly.</p></div> 
 
 												<!--4th block of code-->
-												<div class="col-6.5"><pre><code>select Tr.Name, count(distinct P.PlaylistId)
+												<div class="col-6"><pre><code>select Tr.Name, count(distinct P.PlaylistId)
 from Track Tr, PlaylistTrack Pt, Playlist P
 where Tr.TrackId = Pt.TrackId and Pt.PlaylistId = P.PlaylistId
 group by Tr.Name; 
 												</code></pre></div>
 												<!--4th query caption-->
-												<div class="col-6.5"><p>This query lists the names of every track along with a count of the number 
+												<div class="col-5"><p>This query lists the names of every track along with a count of the number 
 													of distinct Playlists that track is on.</p></div>  
 											</div>
 										</div>
