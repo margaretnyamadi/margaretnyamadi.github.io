@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Solid State by HTML5 UP</title>
+		<title>Evaluation of Customer Orders</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -45,8 +45,7 @@
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-								<h2>Generic</h2>
-								<p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+								<h2>Evaluation of Customer Orders (Python, SQLite3)</h2>
 							</div>
 						</header>
 
@@ -54,29 +53,99 @@
 							<div class="wrapper">
 								<div class="inner">
 
-									<h3 class="major">Lorem ipsum dolor</h3>
-									<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+									<h3 class="major">Overview</h3>
+									<p>
+										The customer orders dataset is a csv file containing 3 years’ worth of customer orders (2015 to 2017) 
+										with 4 columns, namely: index, customer_email (unique identifier as hash), net_revenue, and year. 
+										I was tasked with computing the following:
+										<ul>
+											<li>Total revenue for the current year</li>
+											<li>New Customer Revenue e.g. new customers not present in previous year only</li>
+											<li>Revenue of existing customers for current year</li>
+											<li>Revenue lost from attrition</li>
+											<li>Existing Customer Revenue Current Year</li>
+											<li>Existing Customer Revenue Prior Year</li>
+											<li>Total Customers Current Year</li>
+											<li>Total Customers Previous Year</li>
+											<li>New Customers</li>
+											<li>Lost Customers</li>
+										</ul>  
+									</p>
+									<h3 class="major">Methodology</h3>
+									<p>
+										After reviewing the list of tasks expected of me, I determined that storing the customer orders dataset 
+										into a database would be the most effective strategy for me given my experience and time constraints. I 
+										have experience working with databases using SQL and using Python. Furthermore, Python has the sqlite3 library 
+										which allows me to very quickly and effectively create a database, import the csv file, and perform queries on the database.
+									</p>
 
-									<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
-
-									<h3 class="major">Vitae phasellus</h3>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-
+									<!--Table to display results-->
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th style="text-align:left">Task</th>
+													<td colspan="2"></td>
+													<th style="text-align:right">Results</th>
+													<th></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Total Revenue for 2017</td>
+													<td colspan="2"></td>
+													<td style="text-align:right"> $  314174950.3</td>
+												</tr>
+												<tr>
+													<td>New Customer Revenue 2017</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">$  286766076.4</td>
+												</tr>
+												<tr>
+													<td>Existing Customer Revenue 2017</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">$  286766076.4</td>
+												</tr>
+												<tr>
+													<td>Revenue lost in attrition between 2016 and 2017</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">$  56865514.4</td>
+												</tr>
+												<tr>
+													<td>Revenue for 2017 from exsiting customers</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">$  314174950.3</td>
+												</tr>
+												<tr>
+													<td>Revenue for 2016 from exsiting customers</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">$  26206486.5</td>
+												</tr>
+												<tr>
+													<td>Total Number Customers in 2017</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">  249987</td>
+												</tr>
+												<tr>
+													<td>Customes before 2017</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">  376356</td>
+												</tr>
+												<tr>
+													<td>New Customers in 2017 only</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">  228262</td>
+												</tr>
+												<tr>
+													<td>Customers lost in 2017</td>
+													<td colspan="2"></td>
+													<td style="text-align:right">  354631</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+							</section>
+							<!--Table Results Ends-->
 								</div>
 							</div>
 
@@ -85,39 +154,9 @@
 				<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
+							<h3 class="major">Repository</h3>
+							<p><a href="https://github.com/margaretnyamadi/customer_orders_case_study">Here is the link to the github repository.</a></p>
+							
 							<ul class="copyright">
 								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
