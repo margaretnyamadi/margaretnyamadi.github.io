@@ -103,13 +103,13 @@
 										</div>
 
 										<p> 
-											The first visual shows the frequency of each payment type. We see that PAYMENT and CASH-OUT types occur the most,followed by
+											The first visual shows the frequency of each payment type. We see that PAYMENT and CASH-OUT types occur the most, followed by
 											CASH-IN, TRANSFER, and DEBIT as the least number of occurences. After this, we can explore the 'step vs amount' plot and see that 
 											the highest transaction amounts occurred between 280 and 300 hrs, while any time stamp before or after this range has approximately the same
 											amount in transactions. Next, a distribution of the isFraud and isFlaggedFraud columns confirms my earlier comment about the instances
-											of fraudulent vs non-fraudulent transactions. There are significantly less fradulent cases than none fraudulent which suggests that the data 
+											of fraudulent vs non-fraudulent transactions. There are significantly less fradulent cases than non-fraudulent which suggests that the data 
 											for the model will need to be resized in a way that equally represents both. Interestingly enough, plotting the isFraud vs isFlaggedFraud 
-											data seems to suggest that these 2 columns have a significant amount of overlap, however, looking some of the sample values posted above shows
+											data seems to suggest that these 2 columns have a significant amount of overlap, however, looking at some of the sample values posted above shows
 											there are some points of differences.
 										</p>
 									</section>
@@ -119,7 +119,7 @@
 										<p>
 											After importing this kaggle dataset into a dataframe in google colab, I displayed the dataframe to glean any initial insights about the data types
 											present in this dataframe. I then generated several different plots using the columns of the dataframe, some of which made sense. I picked 5 interesting 
-											plots that told different parts of the overall story concerning the transations. Now that I have some understandig of the data, I can begin preparing the
+											plots that told different parts of the overall story concerning the transations. Now that I have some understanding of the data, I can begin preparing the
 											data to be used to train, test, and validate 2 classifiers.
 
 											To begin, I checked for null values in the dataframe and dropped any rows that had null values. Another option would be to interpolate and fill in the missing
