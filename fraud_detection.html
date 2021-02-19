@@ -139,37 +139,65 @@
 										<p>
 											Using the sklean library, I imported the Decision Tree Classifer (DTC) and the Naive Bayes Classifier (NB). Realistically, I would train a few different classifiers and use
 											the most accurate model for real-world analysis. The NB model assumes that a particular feature has no influence on any other feature while the DTC performs well with categorical
-											feature values. I created split the data into 3 categories: train, test, and valid to be used in training the models, testing the models, and validating the models. The results for 
-											both classifers are displayed below.
+											feature values. I created split the data into 3 categories: train, test, and valid to be used in training the models, testing the models, and validating the models. 
 										</p>
+									</section>	
 
-										<!--Table Results for Decision Tree-->
+									<!--Table Results for Decision Tree-->
+									<section>
+										<h3 class="major"> Results and Analysis</h3>
+										<p>
+											The results for both classifers are displayed below:
+
+										</p>
 										<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th style="text-align:left">Classifier</th>
-													<td colspan="2"></td>
-													<th style="text-align:right">Accuracy</th>
-													<th></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Decision Tree Classifier</td>
-													<td colspan="2"></td>
-													<td style="text-align:right">   0.9941152597402597</td>
-												</tr>
-												<tr>
-													<td>Naive Bayes Classifier</td>
-													<td colspan="2"></td>
-													<td style="text-align:right">   0.984577922077922</td>
-												</tr>
-											</tbody>
-										</table>
-									</div> <!--table div ends-->
+											<table>
+												<thead>
+													<tr>
+														<th style="text-align:left">Model</th>
+														<td colspan="2"></td>
+														<th style="text-align:right">Accuracy</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Decision Tree Classifier</td>
+														<td colspan="2"></td>
+														<td style="text-align:right">   0.9941152597402597</td>
+													</tr>
+													<tr>
+														<td>Naive Bayes Classifier</td>
+														<td colspan="2"></td>
+														<td style="text-align:right">   0.984577922077922</td>
+													</tr>
+												</tbody>
+											</table>
+											<p>
+												The DTC model has a higher accuracy on the test data at 99.4 % while NB has a sightly lower accuracy at
+												98.5 %. From displaying the data earlier, we know that there is some relation between the variables so the 
+												assumption the NB model makes be contributing to this error. On the other hand, the DTC model is susciptible 
+												to over-fitting the data so it is important to validate the modelusing validation set.
+											</p>
+											
+										</div> <!--table div ends-->
 
-									</section>	<!-- results and analysis section ends-->
+										<!--Visualize Result-->
+										<p><span class="image left"><img src="images/resClassifier.png" alt="" /></span>There are several ways to check model peformance 
+											and the one I will be using is the accuracy_score() function from sklean. This function returns the fraction of correctly 
+											classified samples with the best performance being 1 so 99. From the accuracy_score() function, DTC has 99.3 % while NB has 
+											98.6 %. I chose a scatterplot to allow for a start visual constrast of the accuracy despite the numbers being so similar.
+										</p>
+										<p>
+											There are other types of performance metrics that could have revealed a more striking constrast in classifier model accuracies such as 
+											an ROC curve or Confusion matrix that would consider false positive and true negatives. These metrics could further improve model differences 
+											in accuracy by revealing flawsin the accuracy_score() function.
+
+											Another problem I ran into while attempting to train the model was the encoding of categorical label. I had to encode all categorical data in order to
+											pass the appropriate training, testing, and validating data with float values to the classifiers. I overcame this error by concactenating those three datasets
+											and creating dummies using pandas. However, sklearn has an encoding function that can more efficiently encode categorical variables.
+										</p>
+									</section> <!-- results and analysis section ends-->
 								</div>
 							</div>
 
