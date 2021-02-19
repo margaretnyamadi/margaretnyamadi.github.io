@@ -117,7 +117,30 @@
 									<section>
 										<h3 class="major">Methodology</h3>
 										<p>
-											After importing this kaggle dataset into a dataframe in google colab, I displayed the dataframe
+											After importing this kaggle dataset into a dataframe in google colab, I displayed the dataframe to glean any initial insights about the data types
+											present in this dataframe. I then generated several different plots using the columns of the dataframe, some of which made sense. I picked 5 interesting 
+											plots that told different parts of the overall story concerning the transations. Now that I have some understandig of the data, I can begin preparing the
+											data to be used to train, test, and validate 2 classifiers.
+
+											To begin, I checked for null values in the dataframe and dropped any rows that had null values. Another option would be to interpolate and fill in the missing
+											data but while attempting to drop rows with null values, I noticed the size of the data set did not change, which indicates that there are no null values in the 
+											dataset.
+											
+										</p>
+										<p>
+											Following the data cleansing, is the equalization and normalization of this dataset. From the data visualization, there is a significant difference in the instances 
+											of fraud vs not-fraud in the datasets. Such large differences in the categories I want to predict can cause the model to be overly trained on one type versus another 
+											resulting in a useless model. The models need to be trained on datatsets that are equally representative of the categories I want to predict i.e. Fraud vs Non-Fraud, 
+											which would allow for a higher accuracy in the model prediction. Therefore, I will use the number of instances of fraud as the number of my training data set. Afterwards, 
+											I will normalize the numerical values in the dataset to transform all features to the same scale, minimizing the influence of extremely large or small weights. To scale the 
+											data,isued the MinMaxScaler in sklean and scaled all numerical data in the dataframe with the exception of the isFraud and isFlaggedFraud.
+										</p>
+
+										<p>
+											Using the sklean library, I imported the Decision Tree Classifer (DTC) and the Naive Bayes Classifier (NB). Realistically, I would train a few different classifiers and use
+											the most accurate model for real-world analysis. The NB model assumes that a particular feature has no influence on any other feature while the DTC performs well with categorical
+											feature values. I created split the data into 3 categories: train, test, and valid to be used in training the models, testing the models, and validating the models. The results for 
+											both classifers are displayed below.
 										</p>
 
 										<!--Table Results for Decision Tree-->
